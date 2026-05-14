@@ -12,10 +12,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        # 確保這裡的資料夾名稱與你倉庫中的完全一致
-        working-directory: forex-&-commodity-position-calculator
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,18 +20,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # 刪除了 cache 相關設定，避免找不到 package-lock.json 而報錯
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build
-        run: npm run build
+      - name: Install and Build
+        # 使用單引號包裹路徑，防止 & 符號破壞指令
+        run: |
+          cd 'forex-&-commodity-position-calculator'
+          npm install
+          npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: forex-&-commodity-position-calculator/dist
+          path: 'forex-&-commodity-position-calculator/dist'
 
   deploy:
     environment:
