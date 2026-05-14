@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     // 確保路徑完全對應你的 GitHub 倉庫名稱與資料夾
-    base: '/ANSUN/forex-&-commodity-position-calculator/',
+    base: '/ANSUN/',
     
     plugins: [
       react(),
