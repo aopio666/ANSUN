@@ -1,0 +1,8 @@
+{
+  "name": "Forex & Commodity Position Calculator",
+  "description": "A professional tool for traders to calculate position sizes for Forex, Gold, and Silver with risk management and commission factors.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
